@@ -1,4 +1,4 @@
-﻿using MusicStoreApi.Repositories;
+﻿using MusicStoreApi.Entities;
 using MusicStoreApi.Repositories.RepositoryInterfaces;
 using MusicStoreApi.Services.ServiceInterfaces;
 using System;
@@ -8,14 +8,19 @@ using System.Threading.Tasks;
 
 namespace MusicStoreApi.Services
 {
-    public class MusicServices : GeneralServices<MusicRepository>, IMusicServices
+    public class MusicServices : IMusicServices
     {
         private readonly IMusicRepository _musicRepository;
 
-        public MusicServices(IMusicRepository musicRepository, Repository<MusicRepository> table) : base(table)
+        public MusicServices(IMusicRepository musicRepository)
         {
 
             _musicRepository = musicRepository;
+        }
+
+        public async Task<IEnumerable<Music>> ListAllMusic()
+        {
+            return await _musicRepository.ListAllAsync();
         }
     }
 }

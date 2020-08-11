@@ -43,10 +43,7 @@ namespace MusicStoreApi
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IMusicServices, MusicServices>();
-            services.AddScoped<IGenreServices, GenreServices>();
             services.AddScoped<ISingerServices, SingerServices>();
-            services.AddScoped<IUserServices, UserServices>();
-            services.AddScoped<IRoleServices, RoleServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

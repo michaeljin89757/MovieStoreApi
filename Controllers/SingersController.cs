@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.TagHelpers.Cache;
 using MusicStoreApi.Services.ServiceInterfaces;
 using System.Text.Json;
+using MusicStoreApi.Entities;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,10 +24,9 @@ namespace MusicStoreApi.Controllers
 
         // GET: api/<SingersController>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult<IEnumerable<Music>>> Get()
         {
-            var singers = await _singerServices.ListAllAsync();
-            return Ok(singers);
+            return Ok(await _singerServices.ListAllSingers());
         }
 
         // GET api/<SingersController>/5

@@ -9,10 +9,10 @@ namespace MusicStoreApi.Repositories
 {
     public class UserRepository : Repository<User>, IUserRepository
     {
-        protected readonly ApiDbContext _dbContext;
+        //protected readonly ApiDbContext _dbContext;
         public UserRepository(ApiDbContext dbContext) : base(dbContext)
         {
-            _dbContext = dbContext;
+            //_dbContext = dbContext;
         }
     }
 }
