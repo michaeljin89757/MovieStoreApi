@@ -20,6 +20,9 @@
 *.tar
 *.zip
 
+# Visual Studio generated files #
+.vs/
+
 # Logs and databases #
 ######################
 *.log
@@ -35,3 +38,15 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Build results #
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
